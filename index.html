@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Город говорит — учебный проект</title>
+    <link rel="stylesheet" href="./styles/global.css" />
+    <link rel="stylesheet" href="./styles/style.css" />
+  </head>
+  <body class="page">
+    <header class="header" id="top">
+      <!-- TODO: сверстайте навигацию для desktop-версии -->
+      <nav class="header__nav" aria-label="Основная навигация">
+        <ul class="header__menu">
+          <li><a class="header__link" href="#top">главная</a></li>
+          <li><a class="header__link" href="#stories">истории</a></li>
+          <li><a class="header__link" href="#about">о проекте</a></li>
+        </ul>
+      </nav>
+
+      <a class="logo" href="#top" aria-label="Город говорит — на главную">
+        <span class="logo__mark" aria-hidden="true"></span>
+        <span class="logo__text">ГОРОД ГОВОРИТ</span>
+      </a>
+
+      <address class="header__contacts">
+        <a href="tel:+79000000000">+7 900 000-00-00</a>
+        <a href="mailto:hello@gorod.local">hello@gorod.local</a>
+      </address>
+
+      <!-- TODO: на ширине 390 px вместо desktop-навигации показать кнопку меню -->
+      <button class="menu-button" type="button" aria-label="Открыть меню">
+        <span></span><span></span><span></span>
+      </button>
+    </header>
+
+    <main>
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero__decor" aria-hidden="true">
+          <span class="hero__circle"></span>
+          <span class="hero__bar"></span>
+          <span class="hero__dot"></span>
+        </div>
+
+        <h1 class="hero__title" id="hero-title">
+          <span>ГОРОД</span>
+          <span>ГОВОРИТ</span>
+          <span>С НАМИ</span>
+        </h1>
+
+        <div class="hero__bottom">
+          <p class="hero__subtitle">
+            Маршруты по местам, которые легко пройти мимо
+          </p>
+          <a class="button button_primary" href="#stories">Открыть маршрут</a>
+        </div>
+      </section>
+
+      <section class="stories" id="stories" aria-labelledby="stories-title">
+        <h2 class="section-title" id="stories-title">ИСТОРИИ</h2>
+
+        <ul class="stories__list">
+          <li class="stories__item">
+            <article class="story-card">
+              <div
+                class="story-card__art story-card__art_type_mosaic"
+                aria-hidden="true"
+              >
+                <!-- TODO: экспортируйте соответствующую иллюстрацию из Figma или воспроизведите её средствами CSS -->
+              </div>
+              <div class="story-card__content">
+                <h3 class="story-card__title">Тихий двор с мозаикой</h3>
+                <p class="story-card__text">
+                  Во дворе обычного дома сохранилась авторская мозаика 1970-х.
+                  Найдите её и разберите, как цвет меняет ощущение пространства.
+                </p>
+                <a class="story-card__link" href="#0">читать историю →</a>
+              </div>
+            </article>
+          </li>
+
+          <!-- TODO: создайте ещё две карточки по макету Figma.
+               2. «Станция без поездов»
+               3. «Дом, который помнит вывески» -->
+        </ul>
+      </section>
+
+      <!-- TODO: сверстайте секцию #about по макету -->
+      <section class="about" id="about" aria-labelledby="about-title">
+        <div class="about__badge" aria-hidden="true"></div>
+        <div class="about__content">
+          <h2 class="section-title" id="about-title">О ПРОЕКТЕ</h2>
+          <p class="about__text">
+            «Город говорит» — учебный медиапроект о деталях городской среды. Он
+            предлагает смотреть на привычные улицы как на набор историй:
+            замечать типографику, архитектуру, следы прошлого и новые сценарии
+            использования пространства.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <!-- TODO: закончите footer по макету: контакты, меню, VK/TG/YT -->
+    <footer class="footer">
+      <address class="footer__contacts">
+        <a href="tel:+79000000000">+7 900 000-00-00</a>
+        <a href="mailto:hello@gorod.local">hello@gorod.local</a>
+        <p>Москва, учебный маршрут</p>
+      </address>
+    </footer>
+  </body>
+</html>
