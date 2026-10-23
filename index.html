@@ -1,112 +1,92 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ru">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Город говорит — учебный проект</title>
-    <link rel="stylesheet" href="./styles/global.css" />
-    <link rel="stylesheet" href="./styles/style.css" />
-  </head>
-  <body class="page">
-    <header class="header" id="top">
-      <!-- TODO: сверстайте навигацию для desktop-версии -->
-      <nav class="header__nav" aria-label="Основная навигация">
-        <ul class="header__menu">
-          <li><a class="header__link" href="#top">главная</a></li>
-          <li><a class="header__link" href="#stories">истории</a></li>
-          <li><a class="header__link" href="#about">о проекте</a></li>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Практическая работа</title>
+  <link rel="stylesheet" href="css/fonts.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Пункт 4: Header -->
+  <header class="header">
+    <div class="container header__container">
+      <a href="#" class="logo">Логотип</a>
+      <nav class="nav">
+        <ul class="nav__list">
+          <li><a href="#hero" class="nav__link">Главная</a></li>
+          <li><a href="#stories" class="nav__link">Истории</a></li>
+          <li><a href="#about" class="nav__link">О нас</a></li>
         </ul>
       </nav>
+      <a href="tel:+79991112233" class="header__phone">+7 (999) 111-22-33</a>
+    </div>
+  </header>
 
-      <a class="logo" href="#top" aria-label="Город говорит — на главную">
-        <span class="logo__mark" aria-hidden="true"></span>
-        <span class="logo__text">ГОРОД ГОВОРИТ</span>
-      </a>
-
-      <address class="header__contacts">
-        <a href="tel:+79000000000">+7 900 000-00-00</a>
-        <a href="mailto:hello@gorod.local">hello@gorod.local</a>
-      </address>
-
-      <!-- TODO: на ширине 390 px вместо desktop-навигации показать кнопку меню -->
-      <button class="menu-button" type="button" aria-label="Открыть меню">
-        <span></span><span></span><span></span>
-      </button>
-    </header>
-
-    <main>
-      <section class="hero" aria-labelledby="hero-title">
-        <div class="hero__decor" aria-hidden="true">
-          <span class="hero__circle"></span>
-          <span class="hero__bar"></span>
-          <span class="hero__dot"></span>
+  <main>
+    <!-- Пункт 5: Hero-секция с HTML-текстом -->
+    <section id="hero" class="hero">
+      <div class="container hero__container">
+        <div class="hero__content">
+          <h1 class="hero__title">Заголовок главной секции</h1>
+          <p class="hero__text">Это обычный HTML-текст, который можно выделить и скопировать.</p>
         </div>
+        <!-- Декоративные элементы делаются через CSS -->
+        <div class="hero__decor-circle"></div>
+        <div class="hero__decor-badge"></div>
+      </div>
+    </section>
 
-        <h1 class="hero__title" id="hero-title">
-          <span>ГОРОД</span>
-          <span>ГОВОРИТ</span>
-          <span>С НАМИ</span>
-        </h1>
-
-        <div class="hero__bottom">
-          <p class="hero__subtitle">
-            Маршруты по местам, которые легко пройти мимо
-          </p>
-          <a class="button button_primary" href="#stories">Открыть маршрут</a>
-        </div>
-      </section>
-
-      <section class="stories" id="stories" aria-labelledby="stories-title">
-        <h2 class="section-title" id="stories-title">ИСТОРИИ</h2>
-
+    <!-- Пункт 6: Секция Stories (ul/li + article) -->
+    <section id="stories" class="stories">
+      <div class="container">
+        <h2 class="section-title">Наши истории</h2>
         <ul class="stories__list">
+          <!-- Карточка 1 (из стартового проекта) -->
           <li class="stories__item">
-            <article class="story-card">
-              <div
-                class="story-card__art story-card__art_type_mosaic"
-                aria-hidden="true"
-              >
-                <!-- TODO: экспортируйте соответствующую иллюстрацию из Figma или воспроизведите её средствами CSS -->
-              </div>
-              <div class="story-card__content">
-                <h3 class="story-card__title">Тихий двор с мозаикой</h3>
-                <p class="story-card__text">
-                  Во дворе обычного дома сохранилась авторская мозаика 1970-х.
-                  Найдите её и разберите, как цвет меняет ощущение пространства.
-                </p>
-                <a class="story-card__link" href="#0">читать историю →</a>
-              </div>
+            <article class="card">
+              <h3 class="card__title">История 1</h3>
+              <p class="card__text">Описание первой истории.</p>
             </article>
           </li>
-
-          <!-- TODO: создайте ещё две карточки по макету Figma.
-               2. «Станция без поездов»
-               3. «Дом, который помнит вывески» -->
+          <!-- Карточка 2 -->
+          <li class="stories__item">
+            <article class="card">
+              <h3 class="card__title">История 2</h3>
+              <p class="card__text">Описание второй истории.</p>
+            </article>
+          </li>
+          <!-- Карточка 3 -->
+          <li class="stories__item">
+            <article class="card">
+              <h3 class="card__title">История 3</h3>
+              <p class="card__text">Описание третьей истории.</p>
+            </article>
+          </li>
         </ul>
-      </section>
+      </div>
+    </section>
 
-      <!-- TODO: сверстайте секцию #about по макету -->
-      <section class="about" id="about" aria-labelledby="about-title">
-        <div class="about__badge" aria-hidden="true"></div>
-        <div class="about__content">
-          <h2 class="section-title" id="about-title">О ПРОЕКТЕ</h2>
-          <p class="about__text">
-            «Город говорит» — учебный медиапроект о деталях городской среды. Он
-            предлагает смотреть на привычные улицы как на набор историй:
-            замечать типографику, архитектуру, следы прошлого и новые сценарии
-            использования пространства.
-          </p>
-        </div>
-      </section>
-    </main>
+    <!-- Пункт 7: Секция About -->
+    <section id="about" class="about">
+      <div class="container">
+        <h2 class="section-title">О нас</h2>
+        <p>Информация о компании или проекте.</p>
+      </div>
+    </section>
+  </main>
 
-    <!-- TODO: закончите footer по макету: контакты, меню, VK/TG/YT -->
-    <footer class="footer">
+  <!-- Пункт 7: Footer с тегом address -->
+  <footer class="footer">
+    <div class="container footer__container">
+      <p>&copy; 2026 Все права защищены</p>
       <address class="footer__contacts">
-        <a href="tel:+79000000000">+7 900 000-00-00</a>
-        <a href="mailto:hello@gorod.local">hello@gorod.local</a>
-        <p>Москва, учебный маршрут</p>
+        <a href="tel:+79991112233" class="footer__link">т. +7 (999) 111-22-33</a>
+        <a href="mailto:info@example.com" class="footer__link">info@example.com</a>
       </address>
-    </footer>
-  </body>
+    </div>
+  </footer>
+
+</body>
 </html>

@@ -1,286 +1,124 @@
-:root {
-  --color-ink: #111111;
-  --color-bg: #f4f1ea;
-  --color-lime: #ddf54b;
-  --color-blue: #315cff;
-  --color-accent: #ff5a36;
-  --color-white: #ffffff;
-  --color-muted: #676767;
-  --radius-md: 24px;
-  --radius-full: 999px;
+/* Базовые сбросы */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-.page {
-  min-width: 320px;
-  color: var(--color-ink);
-  font-family: Inter, Arial, sans-serif;
-  background: var(--color-bg);
+body {
+  font-family: 'Inter', sans-serif;
+  color: #333;
 }
 
-/* TODO: подключите Inter локально через @font-face в отдельном fonts.css. */
-
-.header {
-  min-height: 132px;
-  padding: 36px 48px;
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
-  align-items: center;
+/* Ограничивающий контейнер под макет 1200px */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
 }
 
-.header__menu {
-  display: flex;
-  gap: 28px;
-}
-
-.header__contacts,
-.footer__contacts {
-  display: flex;
-  flex-direction: column;
-  font-style: normal;
-}
-
-.header__contacts {
-  justify-self: end;
-}
-
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
+/* Пункт 8: Стили для доступности и ссылок */
+a {
   text-decoration: none;
-  font-weight: 700;
+  color: inherit;
+  transition: color 0.3s ease, background-color 0.3s ease;
 }
 
-.logo__mark {
-  width: 34px;
-  height: 34px;
-  border-radius: 50%;
-  background: var(--color-blue);
+/* Состояние при наведении */
+a:hover {
+  color: #007bff; 
 }
 
-.menu-button {
-  display: none;
+/* Фокус только при навигации с клавиатуры */
+a:focus-visible {
+  outline: 2px solid #007bff;
+  outline-offset: 4px;
 }
 
-.hero {
-  position: relative;
-  min-height: 720px;
-  padding: 92px 56px 68px;
-  overflow: hidden;
-  background: var(--color-lime);
-}
-
-.hero__title {
-  position: relative;
-  z-index: 2;
-  display: flex;
-  flex-direction: column;
-  font-size: clamp(56px, 8vw, 100px);
-  line-height: 1;
-  font-weight: 700;
-}
-
-.hero__title span:nth-child(2) {
-  align-self: center;
-}
-
-.hero__title span:nth-child(3) {
-  align-self: flex-end;
-}
-
-.hero__bottom {
-  position: absolute;
-  z-index: 2;
-  right: 56px;
-  bottom: 68px;
-  left: 56px;
+/* Пункт 4: Сетка Хедера */
+.header__container {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 20px 15px;
 }
 
-.button {
-  display: inline-flex;
-  min-height: 54px;
-  padding: 0 28px;
-  align-items: center;
-  justify-content: center;
-  border-radius: var(--radius-full);
-  text-decoration: none;
-  font-weight: 600;
+.nav__list {
+  display: flex;
+  list-style: none;
+  gap: 20px;
 }
 
-.button_primary {
-  color: var(--color-white);
-  background: var(--color-ink);
-}
-
-/* Декоративные элементы hero. Уточните размеры и положение по Figma. */
-.hero__circle,
-.hero__bar,
-.hero__dot {
-  position: absolute;
-  display: block;
-}
-
-.hero__circle {
-  width: 460px;
-  height: 460px;
-  top: -110px;
-  right: -20px;
-  border-radius: 50%;
-  background: var(--color-blue);
-}
-
-.hero__bar {
-  width: 725px;
-  height: 184px;
-  left: -120px;
-  bottom: 18px;
-  border-radius: var(--radius-full);
-  background: var(--color-accent);
-  transform: rotate(-8deg);
-}
-
-.hero__dot {
-  width: 110px;
-  height: 110px;
-  right: 240px;
-  bottom: 110px;
-  border-radius: 50%;
-  background: var(--color-blue);
-}
-
-.stories {
-  padding: 72px 48px;
-}
-
-.section-title {
-  font-size: 44px;
-  line-height: 1.15;
-}
-
-.stories__list {
-  margin-top: 36px;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 48px;
-}
-
-.story-card {
-  min-height: 500px;
+/* Пункт 5: Декоративные элементы в Hero через CSS-фигуры */
+.hero {
+  position: relative;
   overflow: hidden;
-  border: 1px solid var(--color-ink);
-  border-radius: var(--radius-md);
-  background: var(--color-white);
+  padding: 100px 0;
+  background-color: #f8f9fa;
 }
 
-.story-card__art {
-  height: 220px;
-  background: var(--color-blue);
+.hero__decor-circle {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  background-color: #007bff;
+  border-radius: 50%; /* Круг */
+  top: 10%;
+  right: -50px;
+  opacity: 0.1;
 }
 
-.story-card__content {
-  padding: 28px;
+/* Пункт 6: Сетка секции Stories на Flexbox или Grid */
+.stories__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  list-style: none;
+  padding: 40px 0;
 }
 
-.story-card__title {
-  font-size: 24px;
-  line-height: 1.17;
+.stories__item {
+  flex: 1 1 calc(33.333% - 20px); /* 3 колонки на десктопе */
+  min-width: 280px;
 }
 
-.story-card__text {
-  margin-top: 16px;
-  font-size: 16px;
-  line-height: 1.44;
+.card {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 20px;
 }
 
-.story-card__link {
-  display: inline-block;
-  margin-top: 16px;
-  font-size: 14px;
-  font-weight: 600;
+/* Пункт 7: Контакты в подвале */
+.footer__container {
+  display: flex;
+  justify-content: space-between;
+  padding: 30px 15px;
+  border-top: 1px solid #eee;
 }
 
-/* TODO: реализуйте about и footer по макету. */
-.about {
-  min-height: 480px;
-  padding: 90px 48px;
+.footer__contacts {
+  font-style: normal; /* Сброс курсива у тега address */
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
-.footer {
-  min-height: 200px;
-  padding: 48px;
-  color: var(--color-white);
-  background: var(--color-ink);
-}
-
-/* TODO: добавьте :hover и :focus-visible для всех интерактивных элементов. */
-
-@media (max-width: 600px) {
-  /* Контрольная ширина макета — 390 px. Не ограничивайтесь одной шириной:
-     страница должна оставаться работоспособной от 320 px. */
-
-  .header {
-    min-height: 96px;
-    padding: 20px;
-    grid-template-columns: 1fr auto;
-  }
-
-  .header__nav,
-  .header__contacts {
-    display: none;
-  }
-
-  .menu-button {
-    width: 48px;
-    height: 48px;
-    display: flex;
+/* Пункт 9: Адаптивность под мобильные устройства (390px / 320px) */
+@media (max-width: 768px) {
+  .header__container,
+  .footer__container {
     flex-direction: column;
-    gap: 5px;
-    align-items: center;
-    justify-content: center;
-    border: 0;
-    border-radius: 50%;
-    background: var(--color-ink);
+    gap: 15px;
+    text-align: center;
   }
-
-  .menu-button span {
-    width: 20px;
-    height: 2px;
-    background: var(--color-white);
-  }
-
-  .hero {
-    min-height: 620px;
-    padding: 86px 20px 28px;
-  }
-
-  .hero__title {
-    font-size: 56px;
-  }
-
-  .hero__title span:nth-child(n) {
-    align-self: flex-start;
-  }
-
-  .hero__bottom {
-    right: 20px;
-    bottom: 28px;
-    left: 20px;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 18px;
-  }
-
-  .stories {
-    padding: 40px 20px;
-  }
-
+  
   .stories__list {
-    grid-template-columns: 1fr;
-    gap: 24px;
+    flex-direction: column;
   }
-
-  /* TODO: адаптируйте размеры карточек, about, footer и декор hero по Figma. */
+  
+  .stories__item {
+    flex: 1 1 100%; /* 1 колонка на мобильных */
+  }
 }
+
+  
